@@ -1,0 +1,8 @@
+erDiagram
+    CLIENTE ||--o{ PEDIDO : realiza
+    PEDIDO ||--|{ DETALLE_PEDIDO : contiene
+    PRODUCTO ||--o{ DETALLE_PEDIDO : aparece_en
+    CLIENTE { int ClienteId PK string Nombre string Correo UK }
+    PRODUCTO { int ProductoId PK string Codigo UK string Nombre decimal PrecioLista }
+    PEDIDO { int PedidoId PK int ClienteId FK date Fecha }
+    DETALLE_PEDIDO { int PedidoId PK,FK int ProductoId PK,FK int Cantidad decimal PrecioUnitario }
