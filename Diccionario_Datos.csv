@@ -1,0 +1,15 @@
+﻿Entidad,Atributo,Descripción,Dominio conceptual,Obligatorio,Clave,Regla
+Cliente,ClienteId,Identificador interno,entero positivo,Sí,PK,RN-01
+Cliente,Nombre,Nombre ficticio o etiqueta,texto (120),Sí,—,Contexto del dominio
+Cliente,Correo,Correo ficticio opcional,texto (254),No,AK condicional,RN-06
+Producto,ProductoId,Identificador interno,entero positivo,Sí,PK,RN-04
+Producto,Codigo,Código único de catálogo,texto (30),Sí,AK,RN-04
+Producto,Nombre,Descripción breve,texto (150),Sí,—,Contexto del dominio
+Producto,PrecioLista,Precio vigente de catálogo,decimal ≥ 0,Sí,—,RN-11
+Pedido,PedidoId,Identificador del pedido,entero positivo,Sí,PK,RN-01
+Pedido,ClienteId,Cliente titular,referencia a Cliente,Sí,FK,RN-01
+Pedido,Fecha,Fecha de pedido,fecha,Sí,—,RN-10
+DetallePedido,PedidoId,Pedido de la línea,referencia a Pedido,Sí,PK parcial / FK,RN-03
+DetallePedido,ProductoId,Producto de la línea,referencia a Producto,Sí,PK parcial / FK,"RN-09, RN-12"
+DetallePedido,Cantidad,Unidades solicitadas,entero > 0,Sí,—,RN-05
+DetallePedido,PrecioUnitario,Precio al registrar la venta,decimal ≥ 0,Sí,—,RN-07
